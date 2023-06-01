@@ -24,27 +24,27 @@ pipeline {
                 }
             }
         }
-        stage("Build Docker file"){
+        // stage("Build Docker file"){
 
-            // agent { node 'master' }
-                steps {
-                    sh 'docker build -t phuongvd7/simple-java:latest .'
-                }
-        }
-        stage('Login') {
-            steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
-        stage('Push') {
-        steps {
-            sh 'docker push phuongvd7/simple-java'
-            }
-        }
-         }
-        post {
-            always {
-            sh 'docker logout'
-            }
-        }
+        //     // agent { node 'master' }
+        //         steps {
+        //             sh 'docker build -t phuongvd7/simple-java:latest .'
+        //         }
+        // }
+        // stage('Login') {
+        //     steps {
+        //         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        //     }
+        // }
+        // stage('Push') {
+        // steps {
+        //     sh 'docker push phuongvd7/simple-java'
+        //     }
+        // }
+        //  }
+        // post {
+        //     always {
+        //     sh 'docker logout'
+        //     }
+        // }
 }
