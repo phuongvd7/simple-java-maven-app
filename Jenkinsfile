@@ -21,5 +21,14 @@ pipeline {
                 }
             }
         }
+        stage("Build Docker file"){
+
+            agent { node 'master' }
+
+                steps {
+                    sh 'docker build -t phuongvd7/simple-java:latest .'
+                }
+
+        }
     }
 }
