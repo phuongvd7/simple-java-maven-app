@@ -5,9 +5,9 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-    }
+    // environment {
+    // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+    // }
     stages {
         stage('Build') {
             steps {
